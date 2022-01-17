@@ -1,7 +1,5 @@
-<p>This is another paragraph.</p>
+<script>
+  export let answer = 'a mystery';
+</script>
 
-<style>
-  p {
-    color: pink;
-  }
-</style>
+<p>The answer is {answer}</p>
