@@ -1,12 +1,19 @@
 <script>
-  import Info from './Info.svelte';
-
-  const pkg = {
-    name: 'svelte',
-    version: 3,
-    speed: 'blazing',
-    website: 'https://svelte.dev',
-  };
+  let cats = [
+    { id: 'J---aiyznGQ', name: 'Keyboard Cat' },
+    { id: 'z_AbfPXTKms', name: 'Maru' },
+    { id: 'OUtn3pvWmpg', name: 'Henri The Existential Cat' },
+  ];
 </script>
 
-<Info {...pkg} />
+<h1>The Famous Cats of YouTube</h1>
+
+<ul>
+  {#each cats as cat}
+    <li>
+      <a target="_blank" href="https://www.youtube.com/watch?v={cat.id}"
+        >{cat.name}</a
+      >
+    </li>
+  {/each}
+</ul>
