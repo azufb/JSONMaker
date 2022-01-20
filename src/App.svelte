@@ -1,9 +1,15 @@
 <script>
-  import CustomButton from './CustomButton.svelte';
-
-  function handleClick() {
-    alert('Button Clicked');
-  }
+  import { marked } from 'marked';
+  let value = `Some words are *italic*, some are **bold**`;
 </script>
 
-<CustomButton on:click={handleClick} />
+{@html marked(value)}
+
+<textarea {value} />
+
+<style>
+  textarea {
+    width: 100%;
+    height: 200px;
+  }
+</style>
