@@ -1,39 +1,31 @@
 <script>
-  let todos = [
-    { done: false, text: 'finish Svelte tutorial' },
-    { done: false, text: 'build an app' },
-    { done: false, text: 'world domination' },
-  ];
-
-  function add() {
-    todos = todos.concat({ done: false, text: '' });
-  }
-
-  function clear() {
-    todos = todos.filter((t) => !t.done);
-  }
-
-  $: remaining = todos.filter((t) => !t.done).length;
+  let w;
+  let h;
+  let size = 42;
+  let text = 'edit me';
 </script>
 
-<h1>Todos</h1>
+<input type="range" bind:value={size} />
+<input bind:value={text} />
 
-{#each todos as todo}
-  <div class:done={todo.done}>
-    <input type="checkbox" bind:checked={todo.done} />
+<p>size: {w}px x {h}px</p>
 
-    <input placeholder="What needs to be done?" bind:value={todo.text} />
-  </div>
-{/each}
-
-<p>{remaining} remaining</p>
-
-<button on:click={add}> Add new </button>
-
-<button on:click={clear}> Clear completed </button>
+<div>
+  <span style="font-size: {size}px">
+    {text}
+  </span>
+</div>
 
 <style>
-  .done {
-    opacity: 0.4;
+  input {
+    display: block;
+  }
+
+  div {
+    display: inline-block;
+  }
+
+  span {
+    word-break: break-all;
   }
 </style>
