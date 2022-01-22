@@ -1,15 +1,39 @@
 <script>
-  import { marked } from 'marked';
-  let value = `Some words are *italic*, some are **bold**`;
+  let todos = [
+    { done: false, text: 'finish Svelte tutorial' },
+    { done: false, text: 'build an app' },
+    { done: false, text: 'world domination' },
+  ];
+
+  function add() {
+    todos = todos.concat({ done: false, text: '' });
+  }
+
+  function clear() {
+    todos = todos.filter((t) => !t.done);
+  }
+
+  $: remaining = todos.filter((t) => !t.done).length;
 </script>
 
-{@html marked(value)}
+<h1>Todos</h1>
 
-<textarea {value} />
+{#each todos as todo}
+  <div class:done={todo.done}>
+    <input type="checkbox" bind:checked={todo.done} />
+
+    <input placeholder="What needs to be done?" bind:value={todo.text} />
+  </div>
+{/each}
+
+<p>{remaining} remaining</p>
+
+<button on:click={add}> Add new </button>
+
+<button on:click={clear}> Clear completed </button>
 
 <style>
-  textarea {
-    width: 100%;
-    height: 200px;
+  .done {
+    opacity: 0.4;
   }
 </style>
