@@ -1,31 +1,33 @@
 <script>
-  let w;
-  let h;
-  let size = 42;
-  let text = 'edit me';
 </script>
 
-<input type="range" bind:value={size} />
-<input bind:value={text} />
+<div class="header">
+  <h1>JSONメーカー</h1>
+</div>
 
-<p>size: {w}px x {h}px</p>
-
-<div>
-  <span style="font-size: {size}px">
-    {text}
-  </span>
+<div class="footer">
+  <p>&copy;2021 azunyan.</p>
 </div>
 
 <style>
-  input {
-    display: block;
+  .header {
+    padding: 1.5rem 2rem;
+    background-color: #2d2c2c;
   }
 
-  div {
-    display: inline-block;
+  .header h1 {
+    margin: 0;
+    color: #ffffff;
   }
 
-  span {
-    word-break: break-all;
+  .footer {
+    margin-top: auto;
+    padding: 0.5rem 2rem;
+    background-color: #2d2c2c;
+  }
+
+  .footer p {
+    margin: 0;
+    color: #ffffff;
   }
 </style>
