@@ -1,10 +1,39 @@
 <script>
+  // 入力された内容を配列に格納。
+
+  // JSON形式に変換。
+
+  // JSON表示。
 </script>
 
 <div class="contentAll">
   <div class="content">
     <div class="form from">
-      <p>#Form is here.</p>
+      <div class="inputProperty">
+        <!-- svelte-ignore a11y-label-has-associated-control -->
+        <label>Key1:</label>
+        <input type="text" placeholder="入力してください1" />
+      </div>
+      <div class="inputProperty">
+        <!-- svelte-ignore a11y-label-has-associated-control -->
+        <label>Key2:</label>
+        <input type="text" placeholder="入力してください2" />
+      </div>
+      <div class="inputProperty">
+        <!-- svelte-ignore a11y-label-has-associated-control -->
+        <label>Key3:</label>
+        <input type="text" placeholder="入力してください3" />
+      </div>
+      <div class="inputProperty">
+        <!-- svelte-ignore a11y-label-has-associated-control -->
+        <label>Key4:</label>
+        <input type="text" placeholder="入力してください4" />
+      </div>
+      <div class="inputProperty">
+        <!-- svelte-ignore a11y-label-has-associated-control -->
+        <label>Key5:</label>
+        <input type="text" placeholder="入力してください5" />
+      </div>
     </div>
 
     <div class="toJSONBtn">
@@ -42,6 +71,28 @@
 
   .from {
     width: 40%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  .inputProperty {
+    display: flex;
+    align-items: center;
+    padding: 0 1rem;
+  }
+
+  .inputProperty:nth-child(1) {
+    padding-top: 1rem;
+  }
+
+  .inputProperty:nth-last-child(1) {
+    padding-bottom: 1rem;
+  }
+
+  .inputProperty input {
+    width: 100%;
+    margin: 0;
   }
 
   .toJSONBtn {
@@ -74,5 +125,6 @@
 
   .to div p {
     margin: 0;
+    padding: 0.5rem;
   }
 </style>
