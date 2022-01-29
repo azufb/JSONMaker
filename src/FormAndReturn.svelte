@@ -110,7 +110,7 @@
   .form {
     background-color: #c4c4c4;
     height: 100%;
-    border-radius: 5%;
+    border-radius: 2.5rem;
   }
 
   .from {
@@ -147,9 +147,10 @@
     margin-bottom: 0;
     background-color: #2d2c2c;
     border: none;
-    border-radius: 15px;
+    border-radius: 15rem;
     color: #ffffff;
     width: 100%;
+    padding: 2rem 0;
   }
 
   .to {
@@ -164,7 +165,7 @@
     background-color: #ffffff;
     width: 95%;
     height: 95%;
-    border-radius: 5%;
+    border-radius: 2rem;
     display: flex;
     flex-direction: column;
     justify-content: center;
