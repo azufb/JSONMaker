@@ -1,9 +1,8 @@
 <script>
-  // 入力された内容を配列に格納。
   let data = [];
-  let jsonData;
-  let jsonData2 = 'Result is here...';
+  let jsonData = 'Result is here...';
 
+  // 入力された内容を配列に格納。
   function addArray() {
     data = [
       ...data,
@@ -19,13 +18,12 @@
     // JSON形式に変換。
     jsonData = JSON.stringify(data);
 
-    let regexp = /,/gim;
-    let regexp2 = /\[{/gim;
-    let regexp3 = /}]/gim;
-    jsonData2 = jsonData.replace(regexp, ',\n');
-    jsonData2 = jsonData2.replace(regexp2, '');
-    jsonData2 = jsonData2.replace(regexp3, '');
-    console.log(jsonData2);
+    let comma = /,/gim;
+    let startBrackets = /\[{/gim;
+    let endBrackets = /}]/gim;
+    jsonData = jsonData.replace(comma, ',\n');
+    jsonData = jsonData.replace(startBrackets, '');
+    jsonData = jsonData.replace(endBrackets, '');
   }
 </script>
 
@@ -36,6 +34,7 @@
         <!-- svelte-ignore a11y-label-has-associated-control -->
         <label>Key1:</label>
         <input
+          id="key"
           type="text"
           bind:value={data.value1}
           placeholder="入力してください1"
@@ -86,7 +85,7 @@
     <div class="form to">
       <div>
         <p>&#123;</p>
-        <p class="jsonAppear">{jsonData2}</p>
+        <p class="jsonAppear">{jsonData}</p>
         <p>&#125;</p>
       </div>
     </div>
