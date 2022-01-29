@@ -1,9 +1,32 @@
 <script>
   // 入力された内容を配列に格納。
+  let data = [];
+  let jsonData;
+  let jsonData2 = 'Result is here...';
 
-  // JSON形式に変換。
+  function addArray() {
+    data = [
+      ...data,
+      {
+        key1: data.value1,
+        key2: data.value2,
+        key3: data.value3,
+        key4: data.value4,
+        key5: data.value5,
+      },
+    ];
 
-  // JSON表示。
+    // JSON形式に変換。
+    jsonData = JSON.stringify(data);
+
+    let regexp = /,/gim;
+    let regexp2 = /\[{/gim;
+    let regexp3 = /}]/gim;
+    jsonData2 = jsonData.replace(regexp, ',\n');
+    jsonData2 = jsonData2.replace(regexp2, '');
+    jsonData2 = jsonData2.replace(regexp3, '');
+    console.log(jsonData2);
+  }
 </script>
 
 <div class="contentAll">
@@ -12,37 +35,59 @@
       <div class="inputProperty">
         <!-- svelte-ignore a11y-label-has-associated-control -->
         <label>Key1:</label>
-        <input type="text" placeholder="入力してください1" />
+        <input
+          type="text"
+          bind:value={data.value1}
+          placeholder="入力してください1"
+        />
       </div>
       <div class="inputProperty">
         <!-- svelte-ignore a11y-label-has-associated-control -->
         <label>Key2:</label>
-        <input type="text" placeholder="入力してください2" />
+        <input
+          type="text"
+          bind:value={data.value2}
+          placeholder="入力してください2"
+        />
       </div>
       <div class="inputProperty">
         <!-- svelte-ignore a11y-label-has-associated-control -->
         <label>Key3:</label>
-        <input type="text" placeholder="入力してください3" />
+        <input
+          type="text"
+          bind:value={data.value3}
+          placeholder="入力してください3"
+        />
       </div>
       <div class="inputProperty">
         <!-- svelte-ignore a11y-label-has-associated-control -->
         <label>Key4:</label>
-        <input type="text" placeholder="入力してください4" />
+        <input
+          type="text"
+          bind:value={data.value4}
+          placeholder="入力してください4"
+        />
       </div>
       <div class="inputProperty">
         <!-- svelte-ignore a11y-label-has-associated-control -->
         <label>Key5:</label>
-        <input type="text" placeholder="入力してください5" />
+        <input
+          type="text"
+          bind:value={data.value5}
+          placeholder="入力してください5"
+        />
       </div>
     </div>
 
     <div class="toJSONBtn">
-      <button>JSON!</button>
+      <button on:click={addArray}>JSON!</button>
     </div>
 
     <div class="form to">
       <div>
-        <p>#Return is here.</p>
+        <p>&#123;</p>
+        <p class="jsonAppear">{jsonData2}</p>
+        <p>&#125;</p>
       </div>
     </div>
   </div>
@@ -53,7 +98,7 @@
     display: flex;
     flex-direction: column;
     height: 100vh;
-    padding: 1.5rem 2rem;
+    padding: 2rem;
   }
 
   .content {
@@ -73,7 +118,7 @@
     width: 40%;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: space-around;
   }
 
   .inputProperty {
@@ -121,10 +166,21 @@
     width: 95%;
     height: 95%;
     border-radius: 5%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
   }
 
   .to div p {
-    margin: 0;
     padding: 0.5rem;
+  }
+
+  .to div p:not(.jsonAppear) {
+    margin: 0;
+  }
+
+  .jsonAppear {
+    white-space: pre-wrap;
+    margin-left: 2em;
   }
 </style>
