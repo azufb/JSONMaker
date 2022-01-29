@@ -134,6 +134,11 @@
     padding-bottom: 1rem;
   }
 
+  .inputProperty label {
+    padding-right: 2rem;
+    font-weight: bold;
+  }
+
   .inputProperty input {
     width: 100%;
     margin: 0;
@@ -151,6 +156,7 @@
     color: #ffffff;
     width: 100%;
     padding: 2rem 0;
+    font-weight: bold;
   }
 
   .to {
