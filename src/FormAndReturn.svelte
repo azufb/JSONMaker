@@ -31,18 +31,15 @@
   <div class="content">
     <div class="form from">
       <div class="inputProperty">
-        <!-- svelte-ignore a11y-label-has-associated-control -->
-        <label>Key1:</label>
+        <label for="label">Key1:</label>
         <input
-          id="key"
           type="text"
           bind:value={data.value1}
           placeholder="入力してください1"
         />
       </div>
       <div class="inputProperty">
-        <!-- svelte-ignore a11y-label-has-associated-control -->
-        <label>Key2:</label>
+        <label for="label">Key2:</label>
         <input
           type="text"
           bind:value={data.value2}
@@ -50,8 +47,7 @@
         />
       </div>
       <div class="inputProperty">
-        <!-- svelte-ignore a11y-label-has-associated-control -->
-        <label>Key3:</label>
+        <label for="label">Key3:</label>
         <input
           type="text"
           bind:value={data.value3}
@@ -59,8 +55,7 @@
         />
       </div>
       <div class="inputProperty">
-        <!-- svelte-ignore a11y-label-has-associated-control -->
-        <label>Key4:</label>
+        <label for="label">Key4:</label>
         <input
           type="text"
           bind:value={data.value4}
@@ -68,8 +63,7 @@
         />
       </div>
       <div class="inputProperty">
-        <!-- svelte-ignore a11y-label-has-associated-control -->
-        <label>Key5:</label>
+        <label for="label">Key5:</label>
         <input
           type="text"
           bind:value={data.value5}
