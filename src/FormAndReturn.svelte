@@ -97,7 +97,7 @@
     display: flex;
     flex-direction: column;
     height: 100vh;
-    padding: 2rem;
+    padding: 3rem 5rem;
   }
 
   .content {
@@ -157,6 +157,7 @@
     width: 100%;
     padding: 2rem 0;
     font-weight: bold;
+    font-size: 24px;
   }
 
   .to {
@@ -188,5 +189,6 @@
   .jsonAppear {
     white-space: pre-wrap;
     margin-left: 2em;
+    font-size: 24px;
   }
 </style>

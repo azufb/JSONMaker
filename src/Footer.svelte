@@ -8,7 +8,7 @@
 <style>
   .footer {
     margin-top: auto;
-    padding: 0.5rem 2rem;
+    padding: 0.5rem 5rem;
     background-color: #2d2c2c;
   }
 

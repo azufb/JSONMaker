@@ -7,11 +7,11 @@
 
 <style>
   .header {
-    padding: 1.5rem 2rem;
     background-color: #2d2c2c;
   }
 
   .header h1 {
+    padding: 1.5rem 5rem;
     margin: 0;
     color: #ffffff;
   }
