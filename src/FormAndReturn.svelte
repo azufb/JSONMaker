@@ -4,26 +4,33 @@
 
   // 入力された内容を配列に格納。
   function addArray() {
-    data = [
-      ...data,
-      {
-        key1: data.value1,
-        key2: data.value2,
-        key3: data.value3,
-        key4: data.value4,
-        key5: data.value5,
-      },
-    ];
+    if (data.value1 !== undefined && data.value2 !== undefined && data.value3 !== undefined && data.value4 !== undefined && data.value5 !== undefined) {
+      return;
+    } else {
+      data = [
+        {
+          key1: data.value1,
+          key2: data.value2,
+          key3: data.value3,
+          key4: data.value4,
+          key5: data.value5,
+        },
+      ];
 
-    // JSON形式に変換。
-    jsonData = JSON.stringify(data);
-
-    let comma = /,/gim;
-    let startBrackets = /\[{/gim;
-    let endBrackets = /}]/gim;
-    jsonData = jsonData.replace(comma, ',\n');
-    jsonData = jsonData.replace(startBrackets, '');
-    jsonData = jsonData.replace(endBrackets, '');
+      // JSON形式に変換。
+      jsonData = JSON.stringify(data);
+      let comma = /,/gim;
+      let startBrackets = /\[{/gim;
+      let endBrackets = /}]/gim;
+      let startMiddleBrackets = /{/gim;
+      let endMiddleBrackets = /}/gim;
+      jsonData = jsonData.replace(comma, ',\n');
+      jsonData = jsonData.replace(startBrackets, '');
+      jsonData = jsonData.replace(endBrackets, '');
+      jsonData = jsonData.replace(startMiddleBrackets, '');
+      jsonData = jsonData.replace(endMiddleBrackets, '');
+    }
+    
   }
 </script>
 
