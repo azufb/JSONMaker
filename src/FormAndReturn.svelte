@@ -1,11 +1,14 @@
 <script>
   let data = [];
+  let message;
   let jsonData = 'Result is here...';
 
   // 入力された内容を配列に格納。
   function addArray() {
     if (data.value1 == undefined && data.value2 == undefined && data.value3 == undefined && data.value4 == undefined && data.value5 == undefined) {
-      return [];
+      message = "1つ以上の値を入力してください。";
+      jsonData = message;
+      
     } else {
       data = [
         {
